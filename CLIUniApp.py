@@ -23,9 +23,11 @@ class UniversitySystem:
         while(choice != "x"):
             choice = input("Admin System (c/g/p/r/s/x): ").lower()
             if(choice == "c"): admin_controller.clear_database()
-            elif(choice == "g"): pass
-            elif(choice == "p"): pass
-            elif(choice == "r"): pass
+            elif(choice == "g"): admin_controller.group_students()
+            elif(choice == "p"): admin_controller.partition_students()
+            elif(choice == "r"): 
+                student_id = input("Remove by ID: ")
+                admin_controller.remove_student_by_id(student_id)
             elif(choice == "s"): admin_controller.show_all_students()
             elif(choice == "x"): pass
             else:

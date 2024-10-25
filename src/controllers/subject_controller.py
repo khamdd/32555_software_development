@@ -67,3 +67,4 @@ class SubjectController:
             elif(choice == "r"): self.remove_subject()
             elif(choice == "s"): self.list_subjects()
             elif(choice == "x"): pass
+            else: print("Invalid choice, please try again")

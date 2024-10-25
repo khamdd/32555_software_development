@@ -17,7 +17,7 @@ class Utils:
         return True if pattern.match(password) else False
     
     @staticmethod
-    def grade_calculate(mark):
+    def grade_calculate(mark: float):
         if mark >= 85:
             grade = "HD"
         elif mark >= 75:

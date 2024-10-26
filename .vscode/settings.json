@@ -1,5 +1,7 @@
 {
     "python.analysis.extraPaths": [
-        "./src/common"
+        "./src/common",
+        "./src/controllers",
+        "./src/models"
     ]
 }

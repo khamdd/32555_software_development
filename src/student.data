@@ -6,24 +6,19 @@
         "password": "Helloworld123",
         "subjects": [
             {
-                "subject_id": 586,
-                "mark": 80,
-                "grade": "D"
+                "subject_id": 590,
+                "mark": 66,
+                "grade": "C"
             },
             {
-                "subject_id": 702,
-                "mark": 83,
-                "grade": "D"
+                "subject_id": 945,
+                "mark": 70,
+                "grade": "C"
             },
             {
-                "subject_id": 699,
-                "mark": 49,
-                "grade": "F"
-            },
-            {
-                "subject_id": 568,
-                "mark": 36,
-                "grade": "F"
+                "subject_id": 869,
+                "mark": 89,
+                "grade": "HD"
             }
         ]
     },

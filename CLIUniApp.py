@@ -26,8 +26,11 @@ class UniversitySystem:
             elif(choice == "g"): admin_controller.group_students()
             elif(choice == "p"): admin_controller.partition_students()
             elif(choice == "r"): 
-                student_id = input("Remove by ID: ")
-                admin_controller.remove_student_by_id(student_id)
+                try:
+                    student_id = int(input("Remove by ID: "))
+                    admin_controller.remove_student_by_id(student_id)
+                except ValueError:
+                    print("Invalid student ID")
             elif(choice == "s"): admin_controller.show_all_students()
             elif(choice == "x"): pass
             else:

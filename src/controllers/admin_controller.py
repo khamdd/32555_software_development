@@ -45,7 +45,6 @@ class AdminController:
     def get_student_by_id(self, student_id: int) -> Student:
         for student in self.database.student_list:
             if student.student_id == student_id:
-                print(student)
                 return student
         return None
     

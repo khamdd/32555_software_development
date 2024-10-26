@@ -54,33 +54,5 @@
                 "grade": "F"
             }
         ]
-    },
-    {
-        "student_id": 274998,
-        "name": "Hehe",
-        "email": "hehe.hehe@university.com",
-        "password": "Hehehehe123",
-        "subjects": [
-            {
-                "subject_id": 591,
-                "mark": 46,
-                "grade": "F"
-            },
-            {
-                "subject_id": 524,
-                "mark": 76,
-                "grade": "D"
-            },
-            {
-                "subject_id": 831,
-                "mark": 99,
-                "grade": "HD"
-            },
-            {
-                "subject_id": 452,
-                "mark": 92,
-                "grade": "HD"
-            }
-        ]
     }
 ]

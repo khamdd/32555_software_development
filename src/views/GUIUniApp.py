@@ -64,6 +64,8 @@ class GUIUniApp():
                 EnrolmentWindow(self.root, self.current_student, self.database)
             else:
                 ExceptionWindow("Student does not exist")
+        else:
+            ExceptionWindow("Invalid email or password")
     
         
 if __name__ == "__main__":

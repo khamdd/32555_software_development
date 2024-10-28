@@ -26,5 +26,33 @@
                 "grade": "HD"
             }
         ]
+    },
+    {
+        "student_id": 726785,
+        "name": "Dang",
+        "email": "dang.dang@university.com",
+        "password": "Helloworld123",
+        "subjects": [
+            {
+                "subject_id": 961,
+                "mark": 30,
+                "grade": "F"
+            },
+            {
+                "subject_id": 550,
+                "mark": 95,
+                "grade": "HD"
+            },
+            {
+                "subject_id": 192,
+                "mark": 39,
+                "grade": "F"
+            },
+            {
+                "subject_id": 614,
+                "mark": 55,
+                "grade": "P"
+            }
+        ]
     }
 ]

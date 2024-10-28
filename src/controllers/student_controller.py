@@ -21,6 +21,7 @@ class StudentController:
                 existed_student = Database().check_existed_student(email)
                 if(existed_student):
                     print(f"Student {existed_student.name} already exists")
+                    break
                 else:
                     name = input("Name: ")
                     
@@ -38,15 +39,18 @@ class StudentController:
     
     def login(self):
         print("Student Sign In")
-        email = input("Email: ")
-        password = input("Password: ")
-        if(Utils().check_email(email) and Utils().check_password(password)):
-            print("Email and password format acceptable")
-            current_student = Database().student_login(email, password)
-            if(current_student):
-                print("Student Sign In")
-                self.current_student = current_student
-                SubjectController(self.current_student, self.database)
-            else:
-                print("Student does not exist")
-        else: print("Incorrect email or password format")
+        while(True):
+            email = input("Email: ")
+            password = input("Password: ")
+            if(Utils().check_email(email) and Utils().check_password(password)):
+                print("Email and password format acceptable")
+                current_student = Database().student_login(email, password)
+                if(current_student):
+                    print("Student Sign In")
+                    self.current_student = current_student
+                    SubjectController(self.current_student, self.database)
+                    break
+                else:
+                    print("Student does not exist")
+                    break
+            else: print("Incorrect email or password format")

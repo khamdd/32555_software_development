@@ -13,18 +13,23 @@ class AdminController:
         if(confirm == "y"):
             self.database.student_list = []
             self.database.write_file()
+            print("Students data cleared")
         
     def show_all_students(self):
         print("Student List")
-        for student in self.database.student_list:
-            print(f"{student.name} :: {student.student_id} --> Email: {student.email}")
-            
-    def group_students(self):
         if(not self.database.student_list):
             print("< Nothing to Display >")
             return
         
+        for student in self.database.student_list:
+            print(f"{student.name} :: {student.student_id} --> Email: {student.email}")
+            
+    def group_students(self):
         print("Grade Grouping")
+        if(not self.database.student_list):
+            print("< Nothing to Display >")
+            return
+        
         
         students_sorted_by_grade = sorted(
             self.database.student_list,

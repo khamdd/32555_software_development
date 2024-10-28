@@ -12,41 +12,37 @@ class StudentController:
 
     def register(self):
         print("Student Sign Up")
-        while(True):
-            email = input("Email: ")
-            password = input("Password: ")
-            if(Utils().check_email(email) and Utils().check_password(password)):
-                print("Email and password format acceptable")
-                if(Database().check_existed_student(email)):
-                    print("Student already exists")
-                else:
-                    name = input("Name: ")
-                    
-                    # Check unique student ID in student_list
-                    while True:
-                        id = random.randint(1, 999999)
-                        if not any(student.student_id == id for student in self.database.student_list):
-                            break
-                    new_student = Student(id, name, email, password, [])
-                    self.database.add_student(new_student)
-                    self.database.write_file()
-                    print(f"Enrolling Student {name}")
-                break
-            else: print("Incorrect email or password format")
+        email = input("Email: ")
+        password = input("Password: ")
+        if(Utils().check_email(email) and Utils().check_password(password)):
+            print("Email and password format acceptable")
+            if(Database().check_existed_student(email)):
+                print("Student already exists")
+            else:
+                name = input("Name: ")
+                
+                # Check unique student ID in student_list
+                while True:
+                    id = random.randint(1, 999999)
+                    if not any(student.student_id == id for student in self.database.student_list):
+                        break
+                new_student = Student(id, name, email, password, [])
+                self.database.add_student(new_student)
+                self.database.write_file()
+                print(f"Enrolling Student {name}")
+        else: print("Incorrect email or password format")
     
     def login(self):
         print("Student Sign In")
-        while(True):
-            email = input("Email: ")
-            password = input("Password: ")
-            if(Utils().check_email(email) and Utils().check_password(password)):
-                print("Email and password format acceptable")
-                current_student = Database().student_login(email, password)
-                if(current_student):
-                    print("Student Sign In")
-                    self.current_student = current_student
-                    SubjectController(self.current_student, self.database)
-                    break
-                else:
-                    print("Student does not exist")
-            else: print("Incorrect email or password format")
+        email = input("Email: ")
+        password = input("Password: ")
+        if(Utils().check_email(email) and Utils().check_password(password)):
+            print("Email and password format acceptable")
+            current_student = Database().student_login(email, password)
+            if(current_student):
+                print("Student Sign In")
+                self.current_student = current_student
+                SubjectController(self.current_student, self.database)
+            else:
+                print("Student does not exist")
+        else: print("Incorrect email or password format")

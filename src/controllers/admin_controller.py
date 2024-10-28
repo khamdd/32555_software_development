@@ -24,6 +24,8 @@ class AdminController:
             print("< Nothing to Display >")
             return
         
+        print("Grade Grouping")
+        
         students_sorted_by_grade = sorted(
             self.database.student_list,
             key=lambda student: sum(subject.mark for subject in student.subjects) / len(student.subjects),
@@ -49,6 +51,7 @@ class AdminController:
         return None
     
     def partition_students(self):
+        print("PASS/FAIL Partition")
         partitioned_students = {
             "FAIL": [],
             "PASS": []

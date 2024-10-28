@@ -16,8 +16,10 @@ class StudentController:
         password = input("Password: ")
         if(Utils().check_email(email) and Utils().check_password(password)):
             print("Email and password format acceptable")
-            if(Database().check_existed_student(email)):
-                print("Student already exists")
+            
+            existed_student = Database().check_existed_student(email)
+            if(existed_student):
+                print(f"Student {existed_student.name} already exists")
             else:
                 name = input("Name: ")
                 
